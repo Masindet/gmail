@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gmail page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-50 text-sm font-lexend">
+    <!--sidebar and content -->
+    <div class="flex min-h-screen">
+        <!--sidebar -->
+        <div class="w-64 bg-white border-r">
+            <div class="p-4">
+                <button class="w-full bg-sky-200 hover:bg-sky-300 text-gray-900 font-md py-4 px-2 rounded">Compose</button>
+            </div>
+
+            <!--nav below -->
+            <nav class="px-4 space-y-2">
+                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+                    Inbox
+                    <!--count no of emails received -->
+                </a>
+
+                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+                    Starred
+                </a>
+
+                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+                    Snooze
+                </a>
+
+                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+                    Sent
+                </a>
+
+                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+                    Drafts
+                    <!--count no of drafts -->
+                </a>
+            </nav>
+            <!--label thing -->
+            <div class="px-4 mt-6">
+                <div class="mb-1 text-md text-gray-900">Labels</div>
+                <div class="space-y-1">
+                   <a href="#" class="flex items-center space-x-2 text-gray-900 font-bold hover:bg-gray-200 rounded-full">
+                        Boxbe Waiting List
+                        <!--count -->
+                    </a> 
+                </div>
+            </div>
+        </div>
+
+        <!--    search  -->
+        <!--    main inbox section -->
+        <main class="flex-1 p-6 px-2 bg-white rounded shadow">
+            <!--top nav bar -->
+            <div class="flex justify-between items-center mb-4">
+               <div>
+                    <input type="checkbox" class="mr-2">
+                    <span class="text-gray-500 text-md hover:bg-gray-200">Primary</span>
+                </div>
+                <div>
+                    <input type="checkbox" class="mr-2">
+                    <span class="text-gray-500 text-md hover:bg-gray-200">Promotions</span>
+                </div>
+                          
+            </div>
+
+            <!--email-->
+            <div>
+                <!--email row -->
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100">
+                    <input type="checkbox" class="mr-2">
+                    <div class="flex-1 flex items-center justify-between">
+                        <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                        <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                        <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center px-2 py-3 hover:bg-gray-100">
+                    <input type="checkbox" class="mr-2">
+                    <div class="flex-1 flex items-center justify-between">
+                        <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                        <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                        <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100">
+                    <input type="checkbox" class="mr-2">
+                    <div class="flex-1 flex items-center justify-between">
+                        <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                        <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                        <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100">
+                    <input type="checkbox" class="mr-3" />
+                    <div class="flex-1 flex items-center justify-between">
+                        <div class="font-semibold text-gray-900">careers</div>
+                        <div class="text-gray-700 truncate px-2">Notification of new Job Opening(s) at the United Nations...</div>
+                        <div class="text-gray-400 text-xs whitespace-nowrap">Jul 10</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center px-4 py-3 hover:bg-gray-100">
+                    <input type="checkbox" class="mr-3" />
+                    <div class="flex-1 flex items-center justify-between">
+                        <div class="font-semibold text-gray-900">Google</div>
+                        <div class="text-gray-700 truncate px-2">Security alert - App password was used to sign in...</div>
+                        <div class="text-gray-400 text-xs whitespace-nowrap">Jul 10</div>
+                    </div>
+                </div>
+
+        </main>
+    </div>
+  </body>
+</html>
