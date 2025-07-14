@@ -3,47 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet">
     <title>Gmail page</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-gray-50 text-sm font-lexend">
+
+  <body class="bg-sky-50 text-sm font-lexend">
     <!--sidebar and content -->
     <div class="flex min-h-screen">
         <!--sidebar -->
-        <div class="w-64 bg-white border-r">
+        <div class="w-64 bg-sky-50">
+            <div class="flex">
+                <!--for now just an image-btn instead of the hamburger btn -->
+                <div class="flex p-6 items-center space-x-4">
+                    <button id="menu-btn" class="block hamburger focus:outline-none">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </button>
+                </div>
+
+                <div class="p-2">
+                    <img src="images/logo_gmail.png" alt="logo">
+                </div>
+            </div>
+            
             <div class="p-4">
-                <button class="w-full bg-sky-200 hover:bg-sky-300 text-gray-900 font-md py-4 px-2 rounded">Compose</button>
+                <button class="w-1/2 bg-blue-200 hover:bg-blue-200 text-gray-900 hover:shadow-xl font-medium py-4 px-2 rounded-md">
+                    Compose
+                </button>
             </div>
 
             <!--nav below -->
-            <nav class="px-4 space-y-2">
-                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+            <nav class="px-4 space-y-2 items-center">
+                <a href="#" class="flex items-center py-2 space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
                     Inbox
                     <!--count no of emails received -->
                 </a>
 
-                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+                <a href="#" class="flex items-center py-2 space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
                     Starred
                 </a>
 
-                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+                <a href="#" class="flex items-center py-2 space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
                     Snooze
                 </a>
 
-                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+                <a href="#" class="flex items-center py-2 space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
                     Sent
                 </a>
 
-                <a href="#" class="flex items-center space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
+                <a href="#" class="flex items-center py-2 space-x-2 text-gray-900 font-semibold hover:bg-gray-200 rounded-full">
                     Drafts
                     <!--count no of drafts -->
                 </a>
             </nav>
             <!--label thing -->
             <div class="px-4 mt-6">
-                <div class="mb-1 text-md text-gray-900">Labels</div>
+                <div class="mb-1 text-lg text-gray-900">Labels</div>
                 <div class="space-y-1">
-                   <a href="#" class="flex items-center space-x-2 text-gray-900 font-bold hover:bg-gray-200 rounded-full">
+                   <a href="#" class="flex items-center py-2 space-x-2 text-gray-900 font-bold hover:bg-gray-200 rounded-full">
                         Boxbe Waiting List
                         <!--count -->
                     </a> 
@@ -51,71 +70,143 @@
             </div>
         </div>
 
-        <!--    search  -->
+    
         <!--    main inbox section -->
-        <main class="flex-1 p-6 px-2 bg-white rounded shadow">
-            <!--top nav bar -->
-            <div class="flex justify-between items-center mb-4">
-               <div>
-                    <input type="checkbox" class="mr-2">
-                    <span class="text-gray-500 text-md hover:bg-gray-200">Primary</span>
-                </div>
-                <div>
-                    <input type="checkbox" class="mr-2">
-                    <span class="text-gray-500 text-md hover:bg-gray-200">Promotions</span>
-                </div>
-                          
+        <main class="flex-1 p-6 py-4 bg-slate-50 rounded-md shadow">
+            <!-- Search Area -->
+            <div class="w-1/2 px-6 py-4 bg-slate-50 flex justify-between items-center">
+                <!-- Search input -->
+                <div class="flex-1 mx-6">
+                    <input type="text" placeholder="Search mail" class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+                </div>    
             </div>
 
-            <!--email-->
-            <div>
-                <!--email row -->
-                <div class="flex items-center px-4 py-3 hover:bg-gray-100">
-                    <input type="checkbox" class="mr-2">
-                    <div class="flex-1 flex items-center justify-between">
-                        <div class="font-semibold text-gray-900">Pauline Macharia</div>
-                        <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
-                        <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+            <!--top tabs -->
+            <div class="bg-white p-6 rounded">
+                <div class="flex px-2 items-center justify-between mb-4 bg-orange">
+                    <input type="checkbox" class="ml-2">
+                    <!-- Dropdown -->
+                    <div class="ml-0">
+                        <select class="px-2">
+                            <option value="#">All</option>
+                            <option value="#">Inbox</option>
+                            <option value="#">Mark as Unread</option>
+                            <option value="#">Archive</option>
+                        </select>
+                    </div>
+                </div>
+               
+                
+                <div class="p-2">
+                    <div class="flex items-center space-x-8 border-gray-200 border-b-2">
+                       
+                        <!--star thing -->
+                        <button class="p-2 px-8 text-gray-500 text-md  hover:bg-gray-200 active:text-blue-500 active:border-blue-500 active:border-b-2" >Primary</button>
+                
+                
+                        <button class="p-2 px-8 text-gray-500 text-md  hover:bg-gray-200 active:text-blue-500 active:border-blue-500 active:border-b-2">Promotions</button>
+                    
+                       
+                        <button class="p-2 px-8 text-gray-500 text-md  hover:bg-gray-200 active:text-blue-500 active:border-blue-500 active:border-b-2">Promotions</button>
                     </div>
                 </div>
 
-                <div class="flex items-center px-2 py-3 hover:bg-gray-100">
-                    <input type="checkbox" class="mr-2">
-                    <div class="flex-1 flex items-center justify-between">
-                        <div class="font-semibold text-gray-900">Pauline Macharia</div>
-                        <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
-                        <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                <!--email-->
+                <div>
+                    <!--email row -->
+                    <div class="flex items-center px-4 py-3 hover:bg-gray-100">
+                        <input type="checkbox" class="mr-2">
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                            <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                        </div>
                     </div>
+
+                    <div class='flex items-center px-4 py-3 hover:bg-gray-100'>
+                        <input type="checkbox" class="mr-2">
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                            <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center px-4 py-3 hover:bg-gray-100">
+                        <input type="checkbox" class="mr-2">
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                            <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center px-4 py-3 hover:bg-gray-100">
+                        <input type="checkbox" class="mr-3" />
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">careers</div>
+                            <div class="text-gray-700 truncate px-2">Notification of new Job Opening(s) at the United Nations...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">Jul 10</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center px-4 py-3 hover:bg-gray-100">
+                        <input type="checkbox" class="mr-3" />
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">Google</div>
+                            <div class="text-gray-700 truncate px-2">Security alert - App password was used to sign in...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">Jul 10</div>
+                        </div>
+                    </div>
+
+                    <div class='flex items-center px-4 py-3 hover:bg-gray-100'>
+                        <input type="checkbox" class="mr-2">
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                            <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                        </div>
+                    </div>
+
+                    <div class='flex items-center px-4 py-3 hover:bg-gray-100'>
+                        <input type="checkbox" class="mr-2">
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                            <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                        </div>
+                    </div>
+
+                    <div class='flex items-center px-4 py-3 hover:bg-gray-100'>
+                        <input type="checkbox" class="mr-2">
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                            <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                        </div>
+                    </div>
+
+                    <div class='flex items-center px-4 py-3 hover:bg-gray-100'>
+                        <input type="checkbox" class="mr-2">
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                            <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                        </div>
+                    </div>
+
+                    <div class='flex items-center px-4 py-3 hover:bg-gray-100'>
+                        <input type="checkbox" class="mr-2">
+                        <div class="flex-1 flex items-center justify-between">
+                            <div class="font-semibold text-gray-900">Pauline Macharia</div>
+                            <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
+                            <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="flex items-center px-4 py-3 hover:bg-gray-100">
-                    <input type="checkbox" class="mr-2">
-                    <div class="flex-1 flex items-center justify-between">
-                        <div class="font-semibold text-gray-900">Pauline Macharia</div>
-                        <div class="text-gray-700 truncate px-2">FW: [ICT NOTIFICATIONS] Delayed Monthly Data...</div>
-                        <div class="text-gray-400 text-xs whitespace-nowrap">10:18 AM</div>
-                    </div>
-                </div>
-
-                <div class="flex items-center px-4 py-3 hover:bg-gray-100">
-                    <input type="checkbox" class="mr-3" />
-                    <div class="flex-1 flex items-center justify-between">
-                        <div class="font-semibold text-gray-900">careers</div>
-                        <div class="text-gray-700 truncate px-2">Notification of new Job Opening(s) at the United Nations...</div>
-                        <div class="text-gray-400 text-xs whitespace-nowrap">Jul 10</div>
-                    </div>
-                </div>
-
-                <div class="flex items-center px-4 py-3 hover:bg-gray-100">
-                    <input type="checkbox" class="mr-3" />
-                    <div class="flex-1 flex items-center justify-between">
-                        <div class="font-semibold text-gray-900">Google</div>
-                        <div class="text-gray-700 truncate px-2">Security alert - App password was used to sign in...</div>
-                        <div class="text-gray-400 text-xs whitespace-nowrap">Jul 10</div>
-                    </div>
-                </div>
-
-        </main>
-    </div>
-  </body>
+            </main>
+        </div>
+    </body>
 </html>
